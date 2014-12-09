@@ -144,7 +144,10 @@ def try_get_profile(user):
     try:
         p = user.get_profile()
     except:
-        p = None
+        try:
+            p = user.profile
+        except:
+            p = None
     return p
 
 
